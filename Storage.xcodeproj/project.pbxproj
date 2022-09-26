@@ -85,14 +85,11 @@
 		1979195F28DBFA1D00AC6406 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				19BB909228E1DCBE005C6FFF /* Storages */,
 				1979196028DBFA1D00AC6406 /* StorageApp.swift */,
 				1979196228DBFA1D00AC6406 /* ContentView.swift */,
 				1979196428DBFA1E00AC6406 /* Assets.xcassets */,
 				1979196628DBFA1E00AC6406 /* Preview Content */,
-				1979197028DBFA4F00AC6406 /* IStorage.swift */,
-				1979196E28DBFA4100AC6406 /* MemoryStorage.swift */,
-				1979197228DBFE0300AC6406 /* UserDefaultsStorage.swift */,
-				1979197428DC00DE00AC6406 /* FileStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -113,6 +110,17 @@
 				19ACD9C928E190D600386493 /* PerformanceTests.swift */,
 			);
 			path = StorageTests;
+			sourceTree = "<group>";
+		};
+		19BB909228E1DCBE005C6FFF /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				1979197028DBFA4F00AC6406 /* IStorage.swift */,
+				1979196E28DBFA4100AC6406 /* MemoryStorage.swift */,
+				1979197228DBFE0300AC6406 /* UserDefaultsStorage.swift */,
+				1979197428DC00DE00AC6406 /* FileStorage.swift */,
+			);
+			path = Storages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
