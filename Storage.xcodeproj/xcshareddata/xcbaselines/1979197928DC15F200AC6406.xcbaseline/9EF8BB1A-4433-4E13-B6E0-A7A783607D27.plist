@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classNames</key>
+	<dict>
+		<key>PerformanceTests</key>
+		<dict>
+			<key>testDeleteFile()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.317283</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testDeleteMemory()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.011867</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testDeleteUserDefaults()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.286634</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testReadFile()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.368915</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testReadMemory()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.055517</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testReadUserDefaults()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.059531</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testWriteFile()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.277878</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testWriteMemory()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.010828</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+			<key>testWriteUserDefaults()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.013014</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Sep 26, 2022 17:19:29</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
