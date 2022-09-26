@@ -18,6 +18,8 @@
 		1979197D28DC15F200AC6406 /* ConcurrentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979197C28DC15F200AC6406 /* ConcurrentTests.swift */; };
 		19ACD9C828E18C3500386493 /* SerialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACD9C728E18C3500386493 /* SerialTests.swift */; };
 		19ACD9CA28E190D600386493 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACD9C928E190D600386493 /* PerformanceTests.swift */; };
+		19BB909428E1DDE6005C6FFF /* HybridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB909328E1DDE6005C6FFF /* HybridStorage.swift */; };
+		19BB90B128E1E995005C6FFF /* TaskExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB90B028E1E995005C6FFF /* TaskExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		1979197C28DC15F200AC6406 /* ConcurrentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentTests.swift; sourceTree = "<group>"; };
 		19ACD9C728E18C3500386493 /* SerialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialTests.swift; sourceTree = "<group>"; };
 		19ACD9C928E190D600386493 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
+		19BB909328E1DDE6005C6FFF /* HybridStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStorage.swift; sourceTree = "<group>"; };
+		19BB90B028E1E995005C6FFF /* TaskExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		1979195F28DBFA1D00AC6406 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				19BB90AF28E1E989005C6FFF /* Extensions */,
 				19BB909228E1DCBE005C6FFF /* Storages */,
 				1979196028DBFA1D00AC6406 /* StorageApp.swift */,
 				1979196228DBFA1D00AC6406 /* ContentView.swift */,
@@ -119,8 +124,17 @@
 				1979196E28DBFA4100AC6406 /* MemoryStorage.swift */,
 				1979197228DBFE0300AC6406 /* UserDefaultsStorage.swift */,
 				1979197428DC00DE00AC6406 /* FileStorage.swift */,
+				19BB909328E1DDE6005C6FFF /* HybridStorage.swift */,
 			);
 			path = Storages;
+			sourceTree = "<group>";
+		};
+		19BB90AF28E1E989005C6FFF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				19BB90B028E1E995005C6FFF /* TaskExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,7 +239,9 @@
 			files = (
 				1979197328DBFE0300AC6406 /* UserDefaultsStorage.swift in Sources */,
 				1979196F28DBFA4100AC6406 /* MemoryStorage.swift in Sources */,
+				19BB90B128E1E995005C6FFF /* TaskExtensions.swift in Sources */,
 				1979196328DBFA1D00AC6406 /* ContentView.swift in Sources */,
+				19BB909428E1DDE6005C6FFF /* HybridStorage.swift in Sources */,
 				1979196128DBFA1D00AC6406 /* StorageApp.swift in Sources */,
 				1979197128DBFA4F00AC6406 /* IStorage.swift in Sources */,
 				1979197528DC00DE00AC6406 /* FileStorage.swift in Sources */,
@@ -303,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -357,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -383,6 +399,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -412,6 +429,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

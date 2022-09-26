@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserDefaultsStorage: IStorage {
+struct UserDefaultsStorage: IStorage {
     private let userDefaults: UserDefaults
     private let bundleIdentifier: String
     

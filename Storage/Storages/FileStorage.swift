@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FileStorage: IStorage {
+struct FileStorage: IStorage {
     private let fileManager: FileManager
     private let root: URL
     
