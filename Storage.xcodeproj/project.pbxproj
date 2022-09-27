@@ -20,6 +20,8 @@
 		19ACD9CA28E190D600386493 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACD9C928E190D600386493 /* PerformanceTests.swift */; };
 		19BB909428E1DDE6005C6FFF /* HybridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB909328E1DDE6005C6FFF /* HybridStorage.swift */; };
 		19BB90B128E1E995005C6FFF /* TaskExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB90B028E1E995005C6FFF /* TaskExtensions.swift */; };
+		19BB90B628E29709005C6FFF /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB90B528E29709005C6FFF /* KeychainStorage.swift */; };
+		19BB90B928E297E9005C6FFF /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB90B828E297E9005C6FFF /* FileManagerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		19ACD9C928E190D600386493 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		19BB909328E1DDE6005C6FFF /* HybridStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStorage.swift; sourceTree = "<group>"; };
 		19BB90B028E1E995005C6FFF /* TaskExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskExtensions.swift; sourceTree = "<group>"; };
+		19BB90B528E29709005C6FFF /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		19BB90B828E297E9005C6FFF /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 		1979197B28DC15F200AC6406 /* StorageTests */ = {
 			isa = PBXGroup;
 			children = (
+				19BB90B728E297D7005C6FFF /* Extensions */,
 				1979197C28DC15F200AC6406 /* ConcurrentTests.swift */,
 				19ACD9C728E18C3500386493 /* SerialTests.swift */,
 				19ACD9C928E190D600386493 /* PerformanceTests.swift */,
@@ -125,6 +130,7 @@
 				1979197228DBFE0300AC6406 /* UserDefaultsStorage.swift */,
 				1979197428DC00DE00AC6406 /* FileStorage.swift */,
 				19BB909328E1DDE6005C6FFF /* HybridStorage.swift */,
+				19BB90B528E29709005C6FFF /* KeychainStorage.swift */,
 			);
 			path = Storages;
 			sourceTree = "<group>";
@@ -133,6 +139,14 @@
 			isa = PBXGroup;
 			children = (
 				19BB90B028E1E995005C6FFF /* TaskExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		19BB90B728E297D7005C6FFF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				19BB90B828E297E9005C6FFF /* FileManagerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 				1979196128DBFA1D00AC6406 /* StorageApp.swift in Sources */,
 				1979197128DBFA4F00AC6406 /* IStorage.swift in Sources */,
 				1979197528DC00DE00AC6406 /* FileStorage.swift in Sources */,
+				19BB90B628E29709005C6FFF /* KeychainStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1979197D28DC15F200AC6406 /* ConcurrentTests.swift in Sources */,
+				19BB90B928E297E9005C6FFF /* FileManagerExtensions.swift in Sources */,
 				19ACD9C828E18C3500386493 /* SerialTests.swift in Sources */,
 				19ACD9CA28E190D600386493 /* PerformanceTests.swift in Sources */,
 			);

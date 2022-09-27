@@ -9,8 +9,9 @@ import XCTest
 @testable import Storage
 
 final class PerformanceTests: XCTestCase {
+    
     private let memoryStorage = MemoryStorage()
-    private let fileStorage = FileStorage(.default, root: .documentsDirectory)
+    private let fileStorage = FileStorage(.default, root: FileManager.default.documentDirectory)
     private let userDefaultsStorage = UserDefaultsStorage(.standard, bundleIdentifier: Bundle.main.bundleIdentifier ?? "aaa")
     
     override func setUpWithError() throws {
