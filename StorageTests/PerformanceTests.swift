@@ -9,11 +9,11 @@ import XCTest
 @testable import Storage
 
 final class PerformanceTests: XCTestCase {
-    
     private let memoryStorage = MemoryStorage()
     private let fileStorage = FileStorage(.default, root: FileManager.default.documentDirectory)
     private let userDefaultsStorage = UserDefaultsStorage(.standard, bundleIdentifier: Bundle.main.bundleIdentifier ?? "aaa")
-    
+    private let keychainStorage = KeychainStorage(serviceIdentifier: Bundle.main.bundleIdentifier ?? "aaa")
+
     override func setUpWithError() throws {
         try memoryStorage.deleteAll()
         try fileStorage.deleteAll()
@@ -50,6 +50,16 @@ final class PerformanceTests: XCTestCase {
         }
     }
     
+    func testWriteKeychain() throws {
+        self.measure {
+            do {
+                try writeTest(keychainStorage, 100)
+            } catch {
+                XCTAssertThrowsError(error)
+            }
+        }
+    }
+    
     func testReadMemory() throws {
         self.measure {
             do {
@@ -79,6 +89,17 @@ final class PerformanceTests: XCTestCase {
             }
         }
     }
+    
+    func testReadKeychain() throws {
+        self.measure {
+            do {
+                try readTest(keychainStorage, 1000)
+            } catch {
+                XCTAssertThrowsError(error)
+            }
+        }
+    }
+    
     func testDeleteMemory() throws {
         self.measure {
             do {
@@ -108,6 +129,17 @@ final class PerformanceTests: XCTestCase {
             }
         }
     }
+    
+    func testDeleteKeychain() throws {
+        self.measure {
+            do {
+                try deleteTest(keychainStorage, 100)
+            } catch {
+                XCTAssertThrowsError(error)
+            }
+        }
+    }
+    
     func writeTest(_ storage: IStorage, _ iterations: Int) throws {
         let value = getText(1000)
         

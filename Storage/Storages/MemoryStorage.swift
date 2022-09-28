@@ -24,13 +24,15 @@ class MemoryStorage: IStorage {
     }
 
     func delete(key: String) throws {
-        queue.async (flags: .barrier) {
+        queue.async(flags: .barrier) {
             self.storage.removeValue(forKey: key)
         }
     }
     
     func deleteAll() throws {
-        storage = [:]
+        queue.async(flags: .barrier) {
+            self.storage.removeAll()
+        }
     }
     
     

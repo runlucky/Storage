@@ -11,8 +11,9 @@ import XCTest
 
 final class ConcurrentTests: XCTestCase {
     private let memoryStorage = MemoryStorage()
-    private let fileStorage = FileStorage(.default, root: .documentsDirectory)
+    private let fileStorage = FileStorage(.default, root: FileManager.default.documentDirectory)
     private let userDefaultsStorage = UserDefaultsStorage(.standard, bundleIdentifier: Bundle.main.bundleIdentifier ?? "aaa")
+    private let keychainStorage = KeychainStorage(serviceIdentifier: Bundle.main.bundleIdentifier ?? "aaa")
 
     override func setUpWithError() throws {
         try memoryStorage.deleteAll()
@@ -22,20 +23,25 @@ final class ConcurrentTests: XCTestCase {
     }
 
     func testOnMemoryConcurrent() throws {
-        try concurrentTest(memoryStorage, 10000)
+        try concurrentTest(memoryStorage)
     }
 
     func testFileConcurrent() throws {
-        try concurrentTest(fileStorage, 10000)
+        try concurrentTest(fileStorage)
     }
     
     func testUserDefaultsConcurrent() throws {
-        try concurrentTest(userDefaultsStorage, 10000)
+        try concurrentTest(userDefaultsStorage)
     }
     
-    func concurrentTest(_ storage: IStorage, _ iterations: Int) throws {
+    func testKeychainConcurrent() throws {
+        try concurrentTest(keychainStorage)
+    }
+    
+    func concurrentTest(_ storage: IStorage) throws {
         let queue = DispatchQueue(label: "ioTest", attributes: .concurrent)
         let expect = expectation(description: "IOTest2")
+        let iterations = 10000
         
         (0...iterations)
             .forEach { n in

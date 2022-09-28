@@ -16,6 +16,9 @@
 		1979197328DBFE0300AC6406 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979197228DBFE0300AC6406 /* UserDefaultsStorage.swift */; };
 		1979197528DC00DE00AC6406 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979197428DC00DE00AC6406 /* FileStorage.swift */; };
 		1979197D28DC15F200AC6406 /* ConcurrentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1979197C28DC15F200AC6406 /* ConcurrentTests.swift */; };
+		199549E828E3F9D000CA10A3 /* MemoryStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199549E728E3F9D000CA10A3 /* MemoryStorageTests.swift */; };
+		199549EA28E3FA6700CA10A3 /* IStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199549E928E3FA6700CA10A3 /* IStorageTests.swift */; };
+		199549EC28E3FC0D00CA10A3 /* FileStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199549EB28E3FC0D00CA10A3 /* FileStorageTests.swift */; };
 		19ACD9C828E18C3500386493 /* SerialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACD9C728E18C3500386493 /* SerialTests.swift */; };
 		19ACD9CA28E190D600386493 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ACD9C928E190D600386493 /* PerformanceTests.swift */; };
 		19BB909428E1DDE6005C6FFF /* HybridStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BB909328E1DDE6005C6FFF /* HybridStorage.swift */; };
@@ -46,6 +49,9 @@
 		1979197428DC00DE00AC6406 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		1979197A28DC15F200AC6406 /* StorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1979197C28DC15F200AC6406 /* ConcurrentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrentTests.swift; sourceTree = "<group>"; };
+		199549E728E3F9D000CA10A3 /* MemoryStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorageTests.swift; sourceTree = "<group>"; };
+		199549E928E3FA6700CA10A3 /* IStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IStorageTests.swift; sourceTree = "<group>"; };
+		199549EB28E3FC0D00CA10A3 /* FileStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorageTests.swift; sourceTree = "<group>"; };
 		19ACD9C728E18C3500386493 /* SerialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialTests.swift; sourceTree = "<group>"; };
 		19ACD9C928E190D600386493 /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		19BB909328E1DDE6005C6FFF /* HybridStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridStorage.swift; sourceTree = "<group>"; };
@@ -114,9 +120,12 @@
 		1979197B28DC15F200AC6406 /* StorageTests */ = {
 			isa = PBXGroup;
 			children = (
+				199549E928E3FA6700CA10A3 /* IStorageTests.swift */,
+				199549E728E3F9D000CA10A3 /* MemoryStorageTests.swift */,
+				199549EB28E3FC0D00CA10A3 /* FileStorageTests.swift */,
+				19BB90BA28E3F7CE005C6FFF /* SerialTests */,
 				19BB90B728E297D7005C6FFF /* Extensions */,
 				1979197C28DC15F200AC6406 /* ConcurrentTests.swift */,
-				19ACD9C728E18C3500386493 /* SerialTests.swift */,
 				19ACD9C928E190D600386493 /* PerformanceTests.swift */,
 			);
 			path = StorageTests;
@@ -149,6 +158,14 @@
 				19BB90B828E297E9005C6FFF /* FileManagerExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		19BB90BA28E3F7CE005C6FFF /* SerialTests */ = {
+			isa = PBXGroup;
+			children = (
+				19ACD9C728E18C3500386493 /* SerialTests.swift */,
+			);
+			path = SerialTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +286,10 @@
 			files = (
 				1979197D28DC15F200AC6406 /* ConcurrentTests.swift in Sources */,
 				19BB90B928E297E9005C6FFF /* FileManagerExtensions.swift in Sources */,
+				199549E828E3F9D000CA10A3 /* MemoryStorageTests.swift in Sources */,
+				199549EA28E3FA6700CA10A3 /* IStorageTests.swift in Sources */,
 				19ACD9C828E18C3500386493 /* SerialTests.swift in Sources */,
+				199549EC28E3FC0D00CA10A3 /* FileStorageTests.swift in Sources */,
 				19ACD9CA28E190D600386493 /* PerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
