@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// UserDefaultsを使用したストレージです
 struct UserDefaultsStorage: IStorage {
     private let userDefaults: UserDefaults
     private let bundleIdentifier: String

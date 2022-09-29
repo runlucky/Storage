@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 標準ファイル入出力を使用したストレージです
 struct FileStorage: IStorage {
     private let fileManager: FileManager
     private let root: URL

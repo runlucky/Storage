@@ -1,5 +1,6 @@
 import Foundation
 
+/// オンメモリ上で動作する高速なストレージです
 class MemoryStorage: IStorage {
     private var storage: [String: Data] = [:]
     private let queue = DispatchQueue(label: "OnMemoryStorage", attributes: .concurrent)

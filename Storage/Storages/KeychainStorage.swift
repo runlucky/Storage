@@ -1,5 +1,6 @@
 import Foundation
 
+/// Keychainを使用したストレージです
 class KeychainStorage: IStorage {
     private let serviceIdentifier: String
     private let account = "trcomCredentials"
