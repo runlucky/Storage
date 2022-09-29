@@ -40,7 +40,7 @@ class HybridStorage: IStorage {
         
         return nil
     }
-
+    
     /// 高速化のため書き込まれたデータはすぐには永続化されません
     func upsert<T: Codable>(key: String, value: T) throws {
         // todo: 高速ストレージへの書き込みは省メモリのため、たまに古いデータを削除する必要がある
@@ -71,16 +71,23 @@ class HybridStorage: IStorage {
 
 fileprivate class WaitingList {
     private var list: [String: Bool] = [:]
+    private let queue = DispatchQueue(label: "WaitingList", attributes: .concurrent)
     
     fileprivate func isWaiting(_ key: String) -> Bool {
-        list[key] == true
+        queue.sync {
+            list[key] == true
+        }
     }
     
     fileprivate func add(_ key: String) {
-        list[key] = true
+        queue.async(flags: .barrier) {
+            self.list[key] = true
+        }
     }
     
     fileprivate func delete(_ key: String) {
-        list.removeValue(forKey: key)
+        queue.async(flags: .barrier) {
+            self.list.removeValue(forKey: key)
+        }
     }
 }

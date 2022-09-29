@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let storage = HybridStorage(fastStorage: MemoryStorage(), persistenceStorage: FileStorage(.default, root: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!))
+    private let storage = HybridStorage(fastStorage: MemoryStorage(), persistenceStorage: FileStorage(.default, root: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!), upsertInterval: 1)
     
     @State var count = 0
     
