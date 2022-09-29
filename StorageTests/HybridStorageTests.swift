@@ -2,7 +2,7 @@ import XCTest
 @testable import Storage
 
 final class HybridStorageTests: StorageTests {
-    private var storage: IStorage { MemoryStorage() }
+    private var storage: IStorage { HybridStorage(fastStorage: MemoryStorage(), persistenceStorage: FileStorage(.default, root: FileManager.default.documentDirectory), upsertInterval: 1) }
     
     override func setUpWithError() throws {
         try storage.deleteAll()

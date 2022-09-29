@@ -2,7 +2,7 @@ import XCTest
 @testable import Storage
 
 final class KeychainStorageTests: StorageTests {
-    private var storage: IStorage { MemoryStorage() }
+    private var storage: IStorage { KeychainStorage(serviceIdentifier: Bundle.main.bundlePath) }
     
     override func setUpWithError() throws {
         try storage.deleteAll()
