@@ -49,7 +49,7 @@ class StorageTests: XCTestCase {
                 }
             }
         
-        while try storage.get(key: iterations.description, type: Int.self) != iterations { }
+        while (try? storage.get(key: iterations.description, type: Int.self)) != iterations { }
         
         expect.fulfill()
         

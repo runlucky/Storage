@@ -17,8 +17,8 @@ struct UserDefaultsStorage: IStorage {
         self.bundleIdentifier = bundleIdentifier
     }
     
-    func get<T: Codable>(key: String, type: T.Type) throws -> T? {
-        guard let data = userDefaults.data(forKey: key) else { return nil }
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
+        guard let data = userDefaults.data(forKey: key) else { throw StorageError.notFound(key: key)  }
         return try JSONDecoder().decode(type, from: data)
     }
     

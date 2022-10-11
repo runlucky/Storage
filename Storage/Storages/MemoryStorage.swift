@@ -6,13 +6,13 @@ class MemoryStorage: IStorage {
     private let queue = DispatchQueue(label: "OnMemoryStorage", attributes: .concurrent)
     
     
-    func get<T: Codable>(key: String, type: T.Type) throws -> T? {
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
         var data: Data?
         queue.sync {
             data = storage[key]
         }
         
-        guard let data = data else { return nil }
+        guard let data = data else { throw StorageError.notFound(key: key) }
         return try JSONDecoder().decode(type, from: data)
     }
     

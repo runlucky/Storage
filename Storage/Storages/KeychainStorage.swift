@@ -9,7 +9,7 @@ class KeychainStorage: IStorage {
         self.serviceIdentifier = serviceIdentifier
     }
     
-    func get<T: Codable>(key: String, type: T.Type) throws -> T? {
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
         let query: [String: Any] = [
             kSecClass              as String: kSecClassGenericPassword,
             kSecAttrLabel          as String: serviceIdentifier,
@@ -27,7 +27,7 @@ class KeychainStorage: IStorage {
         
         switch status {
         case errSecItemNotFound:
-            return nil
+            throw StorageError.notFound(key: key)
 
         case errSecSuccess:
             guard let item = item,

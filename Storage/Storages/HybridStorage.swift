@@ -28,17 +28,15 @@ class HybridStorage: IStorage {
         self.upsertInterval = upsertInterval
     }
     
-    func get<T: Codable>(key: String, type: T.Type) throws -> T? {
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
         if let value = try? fastStorage.get(key: key, type: type) {
             return value
         }
         
-        if let value = try persistenceStorage.get(key: key, type: type) {
-            try fastStorage.upsert(key: key, value: value)
-            return value
-        }
-        
-        return nil
+        let value = try persistenceStorage.get(key: key, type: type)
+        try fastStorage.upsert(key: key, value: value)
+
+        return value
     }
     
     /// 高速化のため書き込まれたデータはすぐには永続化されません

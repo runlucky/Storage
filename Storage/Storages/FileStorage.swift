@@ -17,9 +17,9 @@ struct FileStorage: IStorage {
         self.root = root
     }
     
-    func get<T: Codable>(key: String, type: T.Type) throws -> T? {
+    func get<T: Codable>(key: String, type: T.Type) throws -> T {
         let url = root.appendingPathComponent(key)
-        guard fileManager.fileExists(atPath: url.path) else { return nil }
+        guard fileManager.fileExists(atPath: url.path) else { throw StorageError.notFound(key: key) }
         let data = try Data(contentsOf: url)
         return try JSONDecoder().decode(type, from: data)
     }
