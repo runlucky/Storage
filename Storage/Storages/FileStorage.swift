@@ -32,7 +32,13 @@ struct FileStorage: IStorage {
 
     func delete(key: String) throws {
         let url = root.appendingPathComponent(key)
-        try fileManager.removeItem(at: url)
+        
+        do {
+            try fileManager.removeItem(at: url)
+        } catch CocoaError.fileNoSuchFile {
+            // 削除対象のファイルがなかった場合は例外を握りつぶす
+            return
+        }
     }
     
     func deleteAll() throws {
